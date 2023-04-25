@@ -1,4 +1,13 @@
-## 0.0.1 (2023-04-25)
+# [0.1.0](https://github.com/codingkwazii/nx-react-actions/compare/0.0.1...0.1.0) (2023-04-25)
+
+
+### Features
+
+* wip feat test ([f546271](https://github.com/codingkwazii/nx-react-actions/commit/f546271de433bae68440b8b60b283ba8621dd362))
+
+
+
+## [0.0.1](https://github.com/codingkwazii/nx-react-actions/compare/fd155e5fc18c261f4697740bdb547a69a439b37d...0.0.1) (2023-04-25)
 
 
 ### Bug Fixes
