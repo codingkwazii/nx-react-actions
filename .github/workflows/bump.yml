@@ -22,6 +22,7 @@ jobs:
         env:
           TOKEN_ACTION: ${{ secrets.TOKEN_ACTION }}
         with:
+          token: ${{ secrets.TOKEN_ACTION }}
           tag_name: ${{ steps.changelog.outputs.tag }}
           release_name: ${{ steps.changelog.outputs.tag }}
           body: ${{ steps.changelog.outputs.clean_changelog }}
