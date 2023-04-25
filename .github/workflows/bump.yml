@@ -26,6 +26,7 @@ jobs:
         preset: 'angular'
         tag-prefix: 'v'
         output-file: 'CHANGELOG.md'
+        run: echo "${{ steps.version.outputs }}
     - name: Create Release
       uses: actions/create-release@v1
       with:
@@ -34,5 +35,6 @@ jobs:
         body: ${{ steps.version.outputs.changelog }}
         draft: false
         prerelease: false
+        run: echo "${{ steps.version.outputs }}
       env:
         GITHUB_TOKEN: ${{ secrets.TOKEN_ACTION }}
