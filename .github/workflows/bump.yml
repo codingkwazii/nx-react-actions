@@ -17,10 +17,10 @@ jobs:
         token: ${{ secrets.TOKEN_ACTION }}
     - name: Create Release
       uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
       with:
-        github-token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
-        preset: 'angular'
         tag_name: ${{ steps.changelog.outputs.tag }}
         release_name: ${{ steps.changelog.outputs.tag }}
         body: ${{ steps.changelog.outputs.clean_changelog }}
