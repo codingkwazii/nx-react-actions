@@ -19,19 +19,19 @@ jobs:
         node-version: '14'
 
     - name: Install dependencies
-      run: npm install
+      run: yarn install
 
     - name: Bump version and generate changelog
       id: version
       uses: TriPSs/conventional-changelog-action@v3
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
       
     - name: Create Release
       uses: actions/create-release@v1
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.TOKEN_ACTION }}
       with:
         tag_name: ${{ steps.version.outputs.version_tag }}
         release_name: ${{ steps.version.outputs.release_title }}
