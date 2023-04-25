@@ -26,3 +26,13 @@ jobs:
         preset: 'angular'
         tag-prefix: 'v'
         output-file: 'CHANGELOG.md'
+    - name: Create Release
+      uses: actions/create-release@v1
+      with:
+        tag_name: ${{ steps.version.outputs.version_tag }}
+        release_name: ${{ steps.version.outputs.version_tag }}
+        body: ${{ steps.version.outputs.changelog }}
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.TOKEN_ACTION }}
