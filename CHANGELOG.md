@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/codingkwazii/nx-react-actions/compare/v0.3.0...v0.3.1) (2023-04-25)
+
+
+### Bug Fixes
+
+* added release ([51f1c58](https://github.com/codingkwazii/nx-react-actions/commit/51f1c58b78901cde9646fef42c95b4cb17398ab6))
+
+
+
 # [0.3.0](https://github.com/codingkwazii/nx-react-actions/compare/v0.2.0...v0.3.0) (2023-04-25)
 
 
