@@ -12,12 +12,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Conventional Changelog Action
-      id: changelog
-      uses: TriPSs/conventional-changelog-action@v3
+    - uses: actions/checkout@v3
       with:
-        github-token: ${{ secrets.github_token }}
-        output-file: "false"
+        token: ${{ secrets.TOKEN_ACTION }}
     - name: Create Release
       uses: actions/create-release@v1
       if: ${{ steps.changelog.outputs.skipped == 'false' }}
