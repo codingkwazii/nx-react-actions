@@ -1,27 +1,40 @@
-name: Bump version
+name: Bump Version and Create Release
+
 on:
   push:
     branches:
-      - main
-    paths-ignore:
-      - 'package.json'
-      - 'CHANGELOG.md'
+      - master
+
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v2
+      
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
       with:
-        token: ${{ secrets.TOKEN_ACTION }}
-    - name: Bump version and push tag
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Bump version and generate changelog
+      id: version
       uses: TriPSs/conventional-changelog-action@v3
       with:
-        github-token: ${{ secrets.TOKEN_ACTION }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         git-message: 'chore(release): {version}'
-        preset: 'angular'
-        tag-prefix: ''
-        output-file: 'CHANGELOG.md'
-        tag_name: ${{ steps.changelog.outputs.tag }}
-        release_name: ${{ steps.changelog.outputs.tag }}
-        body: ${{ steps.changelog.outputs.clean_changelog }}
+      
+    - name: Create Release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.version.outputs.version_tag }}
+        release_name: ${{ steps.version.outputs.release_title }}
+        body: ${{ steps.version.outputs.changelog }}
+        draft: false
+        prerelease: false
