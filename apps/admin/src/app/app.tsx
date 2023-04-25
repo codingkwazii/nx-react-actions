@@ -3,10 +3,12 @@ import styles from './app.module.css';
 
 import NxWelcome from './nx-welcome';
 
+import Compo from './comp';
 export function App() {
   return (
     <>
       <NxWelcome title="admin" />
+<Compo/>
       Iteration Tets
       <div />
     </>
