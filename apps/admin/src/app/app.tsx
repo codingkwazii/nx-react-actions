@@ -7,7 +7,7 @@ export function App() {
   return (
     <>
       <NxWelcome title="admin" />
-      Verion 1
+      Verion 2
       <div />
     </>
   );
