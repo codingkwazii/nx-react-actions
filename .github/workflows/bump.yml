@@ -12,17 +12,18 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-      with:
-        token: ${{ secrets.TOKEN_ACTION }}
-    - name: Bump version and push tag
+    - name: Conventional Changelog Action
+      id: changelog
       uses: TriPSs/conventional-changelog-action@v3
       with:
-        github-token: ${{ secrets.TOKEN_ACTION }}
-        git-message: 'chore(release): {version}'
-        tag_name: ${{ steps.version.outputs.version_tag }}
-        release_name: ${{ steps.version.outputs.release_title }}
-        body: ${{ steps.version.outputs.changelog }}
-        preset: 'angular'
-        tag-prefix: 'v'
-        output-file: 'CHANGELOG.md'
+        github-token: ${{ secrets.github_token }}
+        output-file: "true"
+    - name: Create Release
+      uses: actions/create-release@v1
+      if: ${{ steps.changelog.outputs.skipped == 'false' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+      with:
+        tag_name: ${{ steps.changelog.outputs.tag }}
+        release_name: ${{ steps.changelog.outputs.tag }}
+        body: ${{ steps.changelog.outputs.clean_changelog }}
