@@ -21,8 +21,6 @@ jobs:
       with:
         github-token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
-        tag_name: ${{ steps.bump_version.outputs.version_tag }}
-        body: ${{ steps.bump_version.outputs.changelog }}
         preset: 'angular'
 
     - name: Create Release
