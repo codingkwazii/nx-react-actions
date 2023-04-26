@@ -25,10 +25,4 @@ jobs:
         release_name: ${{ steps.bump_version.outputs.version}}
         body: ${{ steps.bump_version.outputs.changelog }}
         preset: 'angular'
-    - name: Log version variable
-      run: |
-        echo "Outputs:"
-        echo "${{ toJson(steps.bump_version.outputs) }}""
-        echo "bump_version:"
-        echo "${{ toJson(steps.bump_version) }}"
   
