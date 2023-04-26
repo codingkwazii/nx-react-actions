@@ -26,7 +26,10 @@ jobs:
         body: ${{ steps.bump_version.outputs.changelog }}
         preset: 'angular'
     - name: Log version variable
-      run: echo ${{ steps.bump_version.outputs.version_tag }}
+      run: |
+        echo ${{ steps.bump_version.outputs }}
+        echo ${{ steps.bump_version }}
+
     - name: Create Release
       uses: actions/create-release@v1
       with:
