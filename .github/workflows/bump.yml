@@ -21,8 +21,8 @@ jobs:
       with:
         github-token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
-        tag_name: ${{ steps.bump_version.outputs.version_tag }}
-        release_name: ${{ steps.bump_version.outputs.version_tag }}
+        tag_name: ${{ steps.bump_version.outputs.version }}
+        release_name: ${{ steps.bump_version.outputs.version}}
         body: ${{ steps.bump_version.outputs.changelog }}
         preset: 'angular'
     - name: Log version variable
@@ -32,13 +32,4 @@ jobs:
         echo "bump_version:"
         echo ${{ toJson(steps.bump_version) }}
 
-    - name: Create Release
-      uses: actions/create-release@v1
-      with:
-        tag_name: ${{ steps.bump_version.outputs.version_tag }}
-        release_name: ${{ steps.bump_version.outputs.version_tag }}
-        body: ${{ steps.bump_version.outputs.changelog }}
-        draft: false
-        prerelease: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.TOKEN_ACTION }}
+  
