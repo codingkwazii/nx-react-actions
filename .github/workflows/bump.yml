@@ -28,9 +28,9 @@ jobs:
     - name: Log version variable
       run: |
         echo "Outputs:"
-        echo ${{ JSON.stringify(steps.bump_version.outputs) }}
+        echo ${{ toJson(steps.bump_version.outputs) }}
         echo "bump_version:"
-        echo ${{ JSON.stringify(steps.bump_version) }}
+        echo ${{ toJson(steps.bump_version) }}
 
     - name: Create Release
       uses: actions/create-release@v1
