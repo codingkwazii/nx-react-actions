@@ -1,3 +1,12 @@
+# [0.6.0](https://github.com/codingkwazii/nx-react-actions/compare/v0.5.0...v0.6.0) (2023-04-26)
+
+
+### Features
+
+* some test ([#4](https://github.com/codingkwazii/nx-react-actions/issues/4)) ([538b062](https://github.com/codingkwazii/nx-react-actions/commit/538b06268741e39537b052ccdcef181586ff50aa))
+
+
+
 # [0.5.0](https://github.com/codingkwazii/nx-react-actions/compare/v0.4.11...v0.5.0) (2023-04-26)
 
 
@@ -31,15 +40,6 @@
 ### Bug Fixes
 
 * release ([c3f17d3](https://github.com/codingkwazii/nx-react-actions/commit/c3f17d34d98b2018e66f8adaa4329ff84938e3ea))
-
-
-
-## [0.4.8](https://github.com/codingkwazii/nx-react-actions/compare/v0.4.7...v0.4.8) (2023-04-26)
-
-
-### Bug Fixes
-
-* wip ([30ba7f1](https://github.com/codingkwazii/nx-react-actions/commit/30ba7f17ea8e1046f90a23f683fb01b548df35b2))
 
 
 
