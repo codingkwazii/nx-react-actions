@@ -22,13 +22,20 @@ jobs:
         github-token: ${{ secrets.TOKEN_ACTION }}
         git-message: 'chore(release): {version}'
         preset: 'angular'
+        create-summary: true
+    - name: Generate changelog
+      run: npx auto-changelog -p --unreleased -t keepachangelog -u --tag-prefix v
 
     - name: Create Release
       uses: actions/create-release@v1
       with:
         tag_name: ${{ steps.bump_version.outputs.version }}
         release_name: ${{ steps.bump_version.outputs.version }}
-        body: ${{ steps.bump_version.outputs.changelog }}
+        #body: ${{ steps.bump_version.outputs.changelog }}
+        body: |
+            Changes in this release:
+
+            $(cat CHANGELOG.md)
         draft: false
         prerelease: false
       env:
