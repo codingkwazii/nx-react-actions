@@ -9,7 +9,8 @@ export function App() {
     <>
       <NxWelcome title="admin" />
 <Compo/>
-     PR TITLE CHECK
+     PR TITLE CHECK some test
+
       <div />
     </>
   );
