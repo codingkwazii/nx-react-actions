@@ -9,7 +9,7 @@ export function App() {
     <>
       <NxWelcome title="admin" />
 <Compo/>
-TEST 3
+TEST 34
       <div />
     </>
   );
