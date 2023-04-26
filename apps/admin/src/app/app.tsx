@@ -10,6 +10,7 @@ export function App() {
       <NxWelcome title="admin" />
 <Compo/>
 TEST 0.6.0
+
       <div />
     </>
   );
