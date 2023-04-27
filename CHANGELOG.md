@@ -1,3 +1,14 @@
+## [1.5.1](https://github.com/codingkwazii/nx-react-actions/compare/v1.5.0...v1.5.1) (2023-04-27)
+
+
+### Bug Fixes
+
+* added semver check ([3a18154](https://github.com/codingkwazii/nx-react-actions/commit/3a18154103f805bc14bc23221e3ca38d27067f89))
+* history file ([92524ce](https://github.com/codingkwazii/nx-react-actions/commit/92524ce6d5aaa3a4c862936ae4a3b3e2263eef36))
+* test ([f108a67](https://github.com/codingkwazii/nx-react-actions/commit/f108a67027db6d6a29056ccdc10a4944f8ec2096))
+
+
+
 # [1.5.0](https://github.com/codingkwazii/nx-react-actions/compare/v1.4.0...v1.5.0) (2023-04-26)
 
 
@@ -37,15 +48,6 @@
 ### Features
 
 * release notes ([#7](https://github.com/codingkwazii/nx-react-actions/issues/7)) ([c64a390](https://github.com/codingkwazii/nx-react-actions/commit/c64a390c57f598f1a338149a1ed923ac4efa2a46))
-
-
-
-# [1.1.0](https://github.com/codingkwazii/nx-react-actions/compare/v1.0.0...v1.1.0) (2023-04-26)
-
-
-### Features
-
-* test ([#6](https://github.com/codingkwazii/nx-react-actions/issues/6)) ([09578fd](https://github.com/codingkwazii/nx-react-actions/commit/09578fde72d9fc76f7acb1d40ae633ef922f284b))
 
 
 
