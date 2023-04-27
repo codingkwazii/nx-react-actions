@@ -23,8 +23,9 @@ jobs:
         git-message: 'chore(release): {version}'
         preset: 'angular'
         create-summary: true
+      # history file  
     - name: Generate changelog
-      run: npx auto-changelog -p --unreleased -t keepachangelog -u --tag-prefix v
+      run: npx auto-changelog -p --unreleased -t keepachangelog -u --tag-prefix v --output HISTORY.md
 
     - name: Create Release
       uses: actions/create-release@v1
