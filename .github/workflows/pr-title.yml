@@ -13,13 +13,6 @@ on:
   push:
     branches:
       - main
-    types:
-      - push
-      - created
-      - deleted
-      - edited
-      - renamed
-      - reopened
 jobs:
   main:
     name: Validate PR title
